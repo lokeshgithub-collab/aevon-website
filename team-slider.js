@@ -1,22 +1,24 @@
-let currentSlide = 0;
-
-const slides = document.querySelectorAll('.team-slide');
+let currentIndex = 0;
 const track = document.querySelector('.team-track');
+const slides = document.querySelectorAll('.team-slide');
 const dots = document.querySelectorAll('.dot');
 
 function updateSlider() {
-  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[currentSlide].classList.add('active');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
 }
 
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
+  currentIndex = (currentIndex + 1) % slides.length;
   updateSlider();
 }
 
 function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   updateSlider();
 }
+
+updateSlider();

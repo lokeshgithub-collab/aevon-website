@@ -32,15 +32,21 @@
       <span class="logo-name">AEVON INC</span>
     </div>
 
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#Products">Products</a>
-      <a href="#team">Team</a>
-      <a href="#contact" class="contact-btn">Contact</a>
-    </nav>
+    <nav class="nav-links" id="navLinks">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#Products">Products</a>
+  <a href="#team">Team</a>
+  <a href="#contact" class="contact-btn">Contact</a>
+</nav>
 
+<!-- Hamburger -->
+<div class="hamburger" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
   </div>
 </header>
 <main>
@@ -61,13 +67,13 @@
 
 
 <div class="animate slide-up">
-  <p style="font-family:'Poppins';">
-    Aevon.inc partners with early-stage founders<br> and growing brands
-    to design, build and ship<br> web and AI-powered experiences that feel<br>
-    polished from day one.
-  </p>
+ <p class="hero-description">
+  Aevon.inc partners with <strong>early-stage founders</strong> and
+  <strong>growing brands</strong> to design, build and ship web and
+  AI-powered experiences that feel polished from day one.
+</p>
+<a href="#contact" class="primary-btn">Book now</a>
 
-  <button class="primary-btn"><span style="font-size: 20px; font-weight: 600px;"><a href="#contact">Book now</a></span></button>
 </div>
 
     </div>
@@ -338,7 +344,7 @@
           <h3 class="team-name">Mr. Mohamed Aaqil</h3>
           <div class="team-role">Founder & CEO</div>
           <p class="team-quote">
-            “Leading a technology-driven products and services ecosystem.”
+            “Driving innovation, building scalable solutions, and shaping the future of digital experiences.”
           </p>
         </div>
 
@@ -346,7 +352,7 @@
           <h3 class="team-name">Mr. Gokul</h3>
           <div class="team-role">Co-Founder & COO</div>
           <p class="team-quote">
-            “Leading a technology-driven products and services ecosystem.”
+            “Driving operational excellence and transforming vision into scalable execution.”
           </p>
         </div>
       </div>
@@ -356,14 +362,14 @@
           <h3 class="team-name">Mr. Javid Shariff</h3>
           <div class="team-role">CTO</div>
           <p class="team-quote">
-            “Leading a technology-driven products and services ecosystem.”
+            “Transforming ideas into scalable, secure, and future-ready technology.”
           </p>
         </div>
 
         <div class="team-card">
           <h3 class="team-name">Mr. Hafeez</h3>
           <div class="team-role">CMO</div>
-          <p class="team-quote">“Leading a technology-driven products and services ecosystem.”</p>
+          <p class="team-quote">“Driving brand growth through strategy, creativity, and data-driven marketing.”</p>
         </div>
       </div>
 
@@ -372,7 +378,7 @@
           <h3 class="team-name">Mr. Seyed Ahamed Irfan S</h3>
           <div class="team-role">Design Lead</div>
           <p class="team-quote">
-            “Leading a technology-driven products and services ecosystem.”
+            “Crafting meaningful designs that balance creativity, usability, and impact.”
           </p>
         </div>
 
@@ -380,7 +386,7 @@
           <h3 class="team-name">Mr. Mohamed Anas</h3>
           <div class="team-role">Developer</div>
           <p class="team-quote">
-            “Leading a technology-driven products and services ecosystem.”
+            “Building reliable, scalable solutions through clean and efficient code.”
           </p>
         </div>
       </div>
@@ -390,7 +396,7 @@
           <h3 class="team-name">Mr. Lokesh Bharathi</h3>
           <div class="team-role">Developer</div>
           <p class="team-quote">
-            “Leading a technology-driven products and services ecosystem.”
+            “Turning ideas into functional, high‑performance applications”
           </p>
         </div>
 
@@ -422,7 +428,7 @@
 <section id="contact" class="section contact-exact">
 
   <h2 class="contact-title animate-top">
-    Contacts <span>Us</span>
+    Contact <span>Us</span>
   </h2>
 
   <p class="contact-subtitle animate-top">
@@ -514,5 +520,13 @@
 <script src="scroll-animations.js"></script>
 <script src="stats-counter.js"></script>
 <script src="contact-form.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+
+
 </body>
 </html>

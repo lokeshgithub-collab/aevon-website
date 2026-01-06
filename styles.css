@@ -19,19 +19,20 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 /* ================= NAVBAR ================= */
 .navbar {
-  width: 1250px;
-  height: auto;
-  top: 64px;
-  left: 55px;
+  width: 100%;
   position: sticky;
-  z-index: 1000;      
-  background-color: #ffffff;
-  border-radius: 25px;
+  top: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
+
+
 
 .navbar::after {
   content: "";
@@ -58,12 +59,11 @@ a {
   background: #ffffff;
   border-radius: 25px;
   border: 1px solid black;
-  padding: 10px 10px 10px 5px;        
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  box-shadow: 0 5px 15px rgba(16,16,16,0.88);
-  margin-bottom: 40px;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(16,16,16,0.15);
 }
 
 .logo {
@@ -89,8 +89,7 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;  
-  margin-left: 350px;                
+  gap: 30px;                  
 }
 
 .nav-links a {
@@ -206,18 +205,49 @@ a {
   color: #8E0090;
 }
 
+.hero-description {
+  max-width: 520px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .hero-description {
+    font-size: 16px;
+    text-align: center;
+    max-width: 100%;
+  }
+}
 .primary-btn {
-  margin-top: 24px;       
-  padding: 14px 40px;
+  margin-top: 24px;
+  padding: 14px 32px;
   border-radius: 16px;
   border: 2px solid #9E01FF;
-  font-size: 16px;
+
+  font-size: 18px;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+
   background: transparent;
-  cursor: default;
-  width: 192px;
-  height: 68px;
+  color: #1f1f1f;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 160px;
+  max-width: 100%;
+  white-space: nowrap;
 }
+
+@media (max-width: 600px) {
+  .primary-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+    width: auto;
+  }
+}
+
 .primary-btn:hover {
   background: #9E01FF;
 }
@@ -236,6 +266,150 @@ a {
   height:auto;
   display: block;
   background: transparent;
+}
+
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 10px 16px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* later you can add hamburger menu */
+  }
+}
+/* ================= MOBILE HERO FIX ================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav-container {
+    width: 92%;
+    height: auto;
+    padding: 10px 14px;
+  }
+
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-name {
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 16px auto;
+    max-width: 320px;
+  }
+
+  .primary-btn {
+    margin: 20px auto 0;
+    width: 160px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 260px;
+    height: auto;
+  }
+}
+/* ================= MOBILE NAVBAR ================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    width: 200px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 
 /* ------------------------- Image blending utilities ------------------------- */
@@ -319,6 +493,46 @@ a {
   font-weight: 300;
 }
 
+@media (max-width: 900px) {
+  .about-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    max-width: 100%;
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image-placeholder {
+    flex: none;
+    margin-bottom: 24px;
+  }
+
+  .about-image-placeholder img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    flex: none;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 5%;
+  }
+}
 
 
 /* ================= SERVICES ================= */
@@ -390,17 +604,20 @@ a {
 /* ================= WHY CHOOSE US – CARDS LAYOUT ================= */
 
 .why-grid {
+  max-width: 1200px;  
+  margin: 0 auto;      
   display: grid;
-  grid-template-columns: repeat(4, 298px); 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
-  justify-content: center; 
-  margin: 0 auto;
+  justify-items: center;  
 }
 
 
 
+
 .why-card {
-  width: 298px;
+  width: 100%;
+  max-width: 298px;
   height: 215px;
   background: #fde7ff;
   border: 1.5px solid #7b2cbf;
@@ -695,6 +912,48 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* ================= STATS SECTION – MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .stats-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .stats-left {
+    height: auto;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .stat {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+
+  .stat-text {
+    margin-top: 0;
+  }
+
+  .stats-right {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .stats-right img {
+    height: auto;
+  }
+}
+
 
 /* ================= OUR SERVICES CARD ================= */
 .services-grid {
@@ -903,13 +1162,13 @@ a {
 
 .team-card {
   background: #FFECF9;
-;
   width: 400px;
   border-radius: 20px;
   padding: 48px 48px 44px 48px;
   box-sizing: border-box;
   text-align: left;
   pointer-events: auto;
+  
 }
 
 .team-name {
@@ -992,6 +1251,69 @@ a {
     padding: 40px 24px;
   }
 }
+
+/* ================= TEAM SLIDER – MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .team-slider {
+    padding: 32px 16px;
+  }
+
+  .team-track {
+    display: flex;
+  }
+
+  .team-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;   
+    padding: 0 12px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .team-slide {
+    padding: 0 12px;
+  }
+
+
+  .team-card {
+    padding: 28px 22px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .team-name {
+    font-size: 20px;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .team-role {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .team-quote {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    word-wrap: break-word;
+  }
+}
+
+
+
 
 /* ================= CONTACT US ================= */
 
@@ -1247,6 +1569,28 @@ a {
     height: 28px;
   }
 }
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: calc(16px + env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}
+/* ================= FOOTER – MOBILE CENTER FIX ================= */
+@media (max-width: 768px) {
+  .footer-bar {
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .footer-text {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 13px;
+    max-width: 100%;
+  }
+}
+
+
 
 /* ================= ANIMATIONS ================= */
 
